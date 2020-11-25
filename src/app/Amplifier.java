@@ -2,9 +2,9 @@ package app;
 
 public class Amplifier {
     String description;
-    Tuner tuner;
-    DvdPlayer dvd;
-    CdPlayer cd;
+    int tuner;
+    String dvd;
+    String cd;
 
     public Amplifier(String description) {
         this.description = description;
@@ -30,17 +30,17 @@ public class Amplifier {
         System.out.println(description + " setting volume to " + level);
     }
 
-    public void setTuner(Tuner tuner) {
+    public void setTuner(int tuner) {
         System.out.println(description + " setting tuner to " + dvd);
         this.tuner = tuner;
     }
 
-    public void setDvd(DvdPlayer dvd) {
+    public void setDvd(String dvd) {
         System.out.println(description + " setting DVD player to " + dvd);
         this.dvd = dvd;
     }
 
-    public void setCd(CdPlayer cd) {
+    public void setCd(String cd) {
         System.out.println(description + " setting CD player to " + cd);
         this.cd = cd;
     }

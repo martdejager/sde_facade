@@ -12,24 +12,58 @@ public class CinemaFacade {
     private static final Tuner tuner = new Tuner("Top-O-Line AM/FM Tuner", amplifier);
 
     public static void startCinema() {
-        amplifier.on();
-        cdPlayer.on();
-        dvdPlayer.on();
         popcornPopper.on();
-        projector.on();
+        popcornPopper.pop();
+        theaterLights.dim(4);
         screen.down();
-        theaterLights.on();
-        tuner.on();
+        projector.on();
+        projector.wideScreenMode();
+        amplifier.on();
+        amplifier.setDvd("Matrix");
+        amplifier.setSurroundSound();
+        amplifier.setVolume(5);
+        dvdPlayer.on();
+        dvdPlayer.play("Matrix");
     }
 
     public static void stopCinema(){
-        amplifier.off();
-        cdPlayer.off();
-        dvdPlayer.off();
         popcornPopper.off();
-        projector.off();
+        theaterLights.on();
         screen.up();
-        theaterLights.off();
+        projector.off();
+        amplifier.off();
+        dvdPlayer.stop();
+        dvdPlayer.eject();
+        dvdPlayer.off();
+    }
+
+    public static void listenToMusic(){
+        theaterLights.on();
+        amplifier.on();
+        amplifier.setVolume(5);
+        amplifier.setCd("The Black Keys: Let's Rock");
+        amplifier.setStereoSound();
+        cdPlayer.on();
+        cdPlayer.play("The Black Keys: Let's Rock");
+    }
+
+    public static void stopListenToMusic(){
+        amplifier.off();
+        cdPlayer.eject();
+        cdPlayer.off();
+    }
+
+    public static void listenToRadio(){
+        tuner.on();
+        tuner.setFm();
+        tuner.setFrequency(541);
+        amplifier.on();
+        amplifier.setVolume(5);
+        amplifier.setTuner(541);
+    }
+
+    public static void stopListenToRadio(){
         tuner.off();
+        amplifier.off();
     }
 }
