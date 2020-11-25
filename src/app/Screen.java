@@ -7,12 +7,12 @@ public class Screen {
         this.description = description;
     }
 
-    public void up() {
-        System.out.println(description + " going up");
-    }
-
     public void down() {
         System.out.println(description + " going down");
+    }
+
+    public void up() {
+        System.out.println(description + " going up");
     }
 
 
