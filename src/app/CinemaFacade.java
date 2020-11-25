@@ -19,11 +19,11 @@ public class CinemaFacade {
         projector.on();
         projector.wideScreenMode();
         amplifier.on();
-        amplifier.setDvd("Matrix");
+        amplifier.setDvd("Interstellar");
         amplifier.setSurroundSound();
         amplifier.setVolume(5);
         dvdPlayer.on();
-        dvdPlayer.play("Matrix");
+        dvdPlayer.play("Interstellar");
     }
 
     public static void stopCinema(){
@@ -41,10 +41,10 @@ public class CinemaFacade {
         theaterLights.on();
         amplifier.on();
         amplifier.setVolume(5);
-        amplifier.setCd("The Black Keys: Let's Rock");
+        amplifier.setCd("Let's Rock");
         amplifier.setStereoSound();
         cdPlayer.on();
-        cdPlayer.play("The Black Keys: Let's Rock");
+        cdPlayer.play("Let's Rock");
     }
 
     public static void stopListenToMusic(){
